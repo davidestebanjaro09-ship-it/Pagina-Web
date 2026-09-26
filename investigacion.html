@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación - Proyecto L.U.Z.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img class="logo-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.">
+            <span class="logo-text">Luz</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="cabina.html">La Cabina</a>
+            <a href="software.html">El Software</a>
+            <a href="investigacion.html" class="active">Investigación</a>
+            <a href="resenas.html">Opiniones</a>
+        </div>
+        <div class="nav-right">
+            <span class="nav-help">Línea 106 - Ayuda inmediata</span>
+        </div>
+    </nav>
+
+    <main class="content-section">
+        <h2>Lo que hay detrás de Luz</h2>
+        <p style="margin-bottom: 3rem; color: var(--text-muted);">Todo el proyecto se apoya en datos públicos de Risaralda y en la revisión de asistentes conversacionales.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card" style="border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px;">
+                <h3>Contexto Regional</h3>
+                <p>Desarrollado específicamente como respuesta territorial para Pereira y los municipios cercanos, áreas que registran tasas de suicidio por encima del promedio nacional.</p>
+                <img
+                    class="regional-chart"
+                    src="assets/contexto-regional.png"
+                    alt="Infografía de la evolución de la salud mental y el análisis de intentos de suicidio en Risaralda entre 2009 y 2024, con tendencias temporales, disparidad de género y grupos de edad en riesgo."
+                >
+            </div>
+            <div class="stat-card" style="border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px;">
+                <h3>Estado del Arte</h3>
+                <p>Análisis comparativo e investigación global de iniciativas tecnológicas en salud mental, privacidad e IA conversacional para la contención en crisis.</p>
+                <iframe
+                    class="state-of-art-pdf"
+                    src="assets/estado-del-arte.pdf"
+                    title="Documento completo: Estado del Arte"
+                ></iframe>
+                <a class="pdf-download" href="assets/estado-del-arte.pdf" target="_blank" rel="noopener">
+                    Abrir o descargar el PDF
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

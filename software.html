@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Software - Proyecto L.U.Z.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img class="logo-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.">
+            <span class="logo-text">Luz</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="cabina.html">La Cabina</a>
+            <a href="software.html" class="active">El Software</a>
+            <a href="investigacion.html">Investigación</a>
+            <a href="resenas.html">Opiniones</a>
+        </div>
+        <div class="nav-right">
+            <span class="nav-help">Línea 106 - Ayuda inmediata</span>
+        </div>
+    </nav>
+
+    <main class="content-section bg-light">
+        <h2>Un asistente entrenado para escuchar</h2>
+        <p style="margin-bottom: 3rem; color: var(--text-muted);">El software de Luz no reemplaza a un profesional. Está diseñado para contener el primer momento, orientar y derivar con seguridad.</p>
+        
+        <div class="features-section">
+            <div class="feature-card">
+                <h3>Modelo</h3>
+                <p>GPT-4.1-nano.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Utilidad y eficiencia</h3>
+                <p>Se seleccionó este modelo por su equilibrio entre capacidad analítica y alta velocidad de procesamiento. Esto minimiza el tiempo de latencia en las respuestas, permitiendo interacciones fluidas y naturales sin sacrificar la coherencia. Además, su costo por millón de tokens es altamente accesible ($0,10 USD de entrada y $0,40 USD de salida), lo cual resulta ideal para ejecutar pruebas iniciales escalables optimizando el presupuesto del proyecto.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Seguridad y ética</h3>
+                <p>Se han implementado estrictos parámetros de operación. La configuración del modelo está respaldada por el asesoramiento de profesionales en psicología para garantizar el uso de un lenguaje adecuado y evitar orientaciones erróneas. Asimismo, el sistema cuenta con restricciones absolutas, como la prohibición de emitir diagnósticos, mitigando así cualquier riesgo o consecuencia adversa para el usuario</p>
+            </div>
+        </div>
+    </main>
+
+    <section class="meetings-section content-section">
+        <h2>Reuniones</h2>
+        <p>El equipo de L.U.Z. ha realizado una serie de reuniones para revisar los avances del software.</p>
+        <div class="meetings-carousel hero-carousel" role="region" aria-label="Fotos de las reuniones del equipo">
+            <img
+                class="hero-carousel-image"
+                id="meetings-carousel-image"
+                src="assets/reuniones/01-reunion-virtual.jpg"
+                alt="El equipo de L.U.Z. reunido virtualmente para revisar el proyecto."
+            >
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
