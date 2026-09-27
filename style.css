@@ -578,13 +578,22 @@ iframe {
     }
 
     .hero-carousel {
+        height: auto;
+        overflow: visible;
+        background: none;
+    }
+
+    .hero-carousel-image {
         height: clamp(240px, 75vw, 360px);
+        border-radius: 12px;
     }
 
     .stats-overlay {
+        position: static;
         padding: 1rem;
-        width: max-content;
-        max-width: calc(100% - 1.5rem);
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0.75rem;
     }
 
     .stats-overlay strong {
