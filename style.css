@@ -583,6 +583,18 @@ iframe {
 
     .stats-overlay {
         padding: 1rem;
+        width: max-content;
+        max-width: calc(100% - 1.5rem);
+    }
+
+    .stats-overlay strong {
+        font-size: 1.5rem;
+    }
+
+    .stats-overlay span {
+        max-width: 9rem;
+        font-size: 0.75rem;
+        line-height: 1.3;
     }
 
     .problem-section {
