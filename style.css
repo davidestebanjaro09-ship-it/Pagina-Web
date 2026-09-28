@@ -149,6 +149,126 @@ html {
     font-weight: 600;
 }
 
+.story-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 5% 5rem;
+}
+
+.story-hero {
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary-color), #164e63);
+    color: white;
+    text-align: left;
+}
+
+.story-hero h1 {
+    max-width: 780px;
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.2;
+}
+
+.story-hero .subtitle {
+    color: #bae6fd;
+}
+
+.story-timeline {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.story-step {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-soft);
+}
+
+.story-step-number {
+    color: var(--accent-blue);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.story-step h2,
+.story-step h3,
+.story-support h3 {
+    color: var(--primary-color);
+}
+
+.story-step h2 {
+    margin-bottom: 0.35rem;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+}
+
+.story-step h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.story-step p {
+    color: var(--text-muted);
+}
+
+.story-step p + p {
+    margin-top: 0.9rem;
+}
+
+.story-stat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.25rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 8px 8px 0;
+    background-color: white;
+}
+
+.story-stat strong {
+    flex: 0 0 auto;
+    color: var(--accent-blue);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+}
+
+.story-stat span {
+    color: var(--text-muted);
+}
+
+.story-support {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.story-support h3 {
+    margin-bottom: 0.5rem;
+}
+
+.story-closing {
+    margin-top: 2rem;
+    padding: 2rem;
+    border-left: 5px solid var(--accent-amber);
+    border-radius: 0 12px 12px 0;
+    background-color: #fffbeb;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
 /* =========================================
    SECCIÓN HERO (INICIO)
    ========================================= */
@@ -554,6 +674,42 @@ iframe {
     .content-section h2,
     .reviews-section h2 {
         font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .story-page {
+        padding: 2.5rem 5%;
+    }
+
+    .story-hero {
+        padding: 1.5rem;
+    }
+
+    .story-hero h1 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .story-step {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.5rem;
+        padding: 1.5rem;
+    }
+
+    .story-step-number {
+        font-size: 1rem;
+    }
+
+    .story-step h2 {
+        font-size: 1.5rem;
+    }
+
+    .story-stat {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .story-closing {
+        padding: 1.5rem;
+        font-size: 1.15rem;
     }
 
     .hero-section {
