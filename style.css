@@ -66,6 +66,10 @@ html {
     border-radius: 6px;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -596,20 +600,85 @@ iframe {
 
 @media (max-width: 1000px) {
     .navbar {
-        flex-wrap: wrap;
-        gap: 1rem 1.5rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.75rem 1rem;
         padding: 1rem 4%;
     }
 
-    .nav-links {
-        order: 3;
-        width: 100%;
+    .menu-toggle {
+        display: flex;
+        grid-column: 2;
+        grid-row: 1;
+        width: 44px;
+        height: 44px;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        gap: clamp(0.75rem, 3vw, 2rem);
+        gap: 5px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background: white;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: var(--primary-color);
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-links {
+        display: none;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        padding: 0.5rem 0;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .navbar.menu-open .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .nav-links a.active {
+        border-bottom: 0;
+        border-left: 3px solid var(--accent-blue);
+        padding-left: 0.75rem;
     }
 
     .nav-right {
-        margin-left: auto;
+        display: none;
+        grid-column: 1 / -1;
+        grid-row: 3;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .navbar.menu-open .nav-right {
+        display: flex;
     }
 
     .hero-section,
@@ -650,16 +719,6 @@ iframe {
     .logo-image {
         width: 36px;
         height: 36px;
-    }
-
-    .nav-help {
-        font-size: 0.75rem;
-    }
-
-    .nav-links {
-        justify-content: space-between;
-        gap: 0.5rem;
-        flex-wrap: wrap;
     }
 
     .nav-links a {

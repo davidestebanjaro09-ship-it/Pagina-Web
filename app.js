@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const menuToggle = navbar?.querySelector('.menu-toggle');
+    const mobileMenu = window.matchMedia('(max-width: 1000px)');
+
+    if (navbar && menuToggle) {
+        const closeMenu = () => {
+            navbar.classList.remove('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Abrir menú');
+        };
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            navbar.classList.toggle('menu-open', !isOpen);
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
+        });
+
+        navbar.querySelectorAll('.nav-links a').forEach((link) => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        navbar.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && navbar.classList.contains('menu-open')) {
+                closeMenu();
+                menuToggle.focus();
+            }
+        });
+
+        mobileMenu.addEventListener('change', closeMenu);
+    }
+
     const startCarousel = (imageId, slides) => {
         const image = document.getElementById(imageId);
 
