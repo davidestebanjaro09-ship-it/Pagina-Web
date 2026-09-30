@@ -3,57 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Cabina - Proyecto L.U.Z.</title>
+    <meta name="description" content="Conoce la cabina L.U.Z., un espacio de escucha diseñado con privacidad, cuidado y materiales reutilizados.">
+    <title>La Cabina | Proyecto L.U.Z.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="redesign.css">
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="logo">
-            <img class="logo-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.">
-            <span class="logo-text">Luz</span>
-        </div>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <nav class="navbar" aria-label="Navegación principal">
+        <a class="logo" href="index.html" aria-label="L.U.Z., ir al inicio"><img class="logo-image" src="assets/logo-luz.png" alt=""><span class="logo-text">Luz</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
         <div class="nav-links" id="site-nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="cabina.html" class="active">La Cabina</a>
-            <a href="software.html">El Software</a>
-            <a href="investigacion.html">Investigación</a>
-            <a href="nuestra-historia.html">Nuestra Historia</a>
-            <a href="resenas.html">Opiniones</a>
+            <a href="index.html">Inicio</a><a href="cabina.html" class="active" aria-current="page">La Cabina</a><a href="software.html">El Software</a><a href="investigacion.html">Investigación</a><a href="nuestra-historia.html">Nuestra Historia</a><a href="resenas.html">Opiniones</a>
         </div>
-        <div class="nav-right">
-            <span class="nav-help">Línea 106 - Ayuda inmediata</span>
-        </div>
+        <div class="nav-right"><span class="nav-help">Línea 106 · Ayuda inmediata</span></div>
     </nav>
-
-    <main class="content-section">
-        <h2>La Cabina, paso a paso</h2>
-        <p style="margin-bottom: 3rem; color: var(--text-muted);">El diseño físico prioriza la privacidad, la sostenibilidad y la viabilidad del despliegue en espacios estratégicos.</p>
-        
-        <div class="features-section">
-            <div class="feature-card feature-card--sustainable">
-                <h3>Estructura Sostenible</h3>
-                <p>Construcción basada en paneles de cartón reciclado, reforzados con papel Kraft y engrudo, garantizando un habitáculo ligero, económico y amigable con el medio ambiente.</p>
+    <main>
+        <header class="cabin-hero">
+            <div class="cabin-hero__copy">
+                <p class="subtitle">UN ESPACIO PARA HACER UNA PAUSA</p>
+                <h1>Un lugar tranquilo, en medio del día.</h1>
+                <p>La cabina L.U.Z. propone un espacio íntimo donde detenerse, expresar lo que se siente y recibir una primera orientación. Su diseño busca cuidar la privacidad sin perder de vista la sostenibilidad y la facilidad de uso.</p>
+                <a class="btn-primary" href="software.html">Conoce el acompañamiento <span aria-hidden="true">→</span></a>
             </div>
-            <div class="feature-card">
-                <h3>Aislamiento Acústico</h3>
-                <p>Recubrimiento interior con paneles texturizados (tipo cartón de huevos) diseñados para fragmentar las ondas sonoras, proporcionando privacidad en las conversaciones y aislando el ruido exterior.</p>
+            <figure class="cabin-hero__image">
+                <img src="assets/inicio/03-cabina-acustica.jpg" alt="Vista de la cabina L.U.Z. revestida con paneles acústicos y preparada como espacio de conversación." loading="lazy">
+                <figcaption>Un espacio cercano, diseñado para favorecer la calma y la privacidad.</figcaption>
+            </figure>
+        </header>
+        <section class="content-section cabin-details" aria-labelledby="cabin-details-title">
+            <p class="subtitle">DISEÑADA CON INTENCIÓN</p>
+            <h2 id="cabin-details-title">Cada detalle busca cuidar a quien la usa.</h2>
+            <p class="cabin-details__intro">La propuesta combina un entorno resguardado, materiales reutilizados y un diseño pensado para hacer más accesible el primer paso hacia la ayuda.</p>
+            <div class="features-section">
+                <article class="feature-card feature-card--sustainable">
+                    <span class="feature-card__number" aria-hidden="true">01</span>
+                    <h3>Materiales con otra vida</h3>
+                    <p>La construcción explora paneles de cartón reutilizado y papel kraft: una alternativa ligera que invita a pensar en el impacto ambiental desde el diseño.</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-card__number" aria-hidden="true">02</span>
+                    <h3>Un poco más de privacidad</h3>
+                    <p>El revestimiento interior con textura acústica busca amortiguar el ruido exterior y ayudar a que cada persona se sienta más cómoda al conversar.</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-card__number" aria-hidden="true">03</span>
+                    <h3>Hecha en equipo</h3>
+                    <p>El proyecto se construye de forma colaborativa, probando ideas y aprendiendo en cada etapa para mejorar la experiencia y la viabilidad de la propuesta.</p>
+                </article>
             </div>
-            <div class="feature-card">
-                <h3>Metodología Scrum</h3>
-                <p>El desarrollo de la cabina se lleva a cabo bajo la metodología Scrum, permitiendo una gestión eficiente del proyecto y una entrega continua.</p>
+        </section>
+        <section class="cabin-gallery" aria-labelledby="cabin-gallery-title">
+            <div class="cabin-gallery__heading">
+                <p class="subtitle">ASÍ VA TOMANDO FORMA</p>
+                <h2 id="cabin-gallery-title">Un proyecto hecho paso a paso.</h2>
             </div>
-        </div>
+            <div class="cabin-gallery__grid">
+                <figure><img src="assets/inicio/01-construccion-cabina.jpeg" alt="Construcción colaborativa de la estructura de la cabina." loading="lazy"><figcaption>Construcción de la estructura</figcaption></figure>
+                <figure><img src="assets/inicio/03-cabina-acustica.jpg" alt="Detalle del interior acústico de la cabina." loading="lazy"><figcaption>Detalle del espacio interior</figcaption></figure>
+                <figure><img src="assets/inicio/06-mural-de-la-cabina.jpg" alt="Mural pintado a mano que aporta color a la cabina." loading="lazy"><figcaption>Un toque de color y comunidad</figcaption></figure>
+            </div>
+        </section>
     </main>
-
+    <footer class="site-footer">
+        <a class="site-footer__brand" href="index.html">L.U.Z.</a>
+        <p>Escuchar, orientar y acercar a la ayuda adecuada.</p>
+        <p class="site-footer__help">Si estás en peligro inmediato, llama al 123. En Colombia puedes comunicarte con la Línea 106 donde esté disponible.</p>
+        <small>Un primer apoyo no sustituye la atención de profesionales de salud mental.</small>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>

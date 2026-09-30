@@ -3,80 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investigación - Proyecto L.U.Z.</title>
+    <meta name="description" content="Consulta el contexto regional, las fuentes y los documentos que respaldan la propuesta del proyecto L.U.Z.">
+    <title>Investigación | Proyecto L.U.Z.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="redesign.css">
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="logo">
-            <img class="logo-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.">
-            <span class="logo-text">Luz</span>
-        </div>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <nav class="navbar" aria-label="Navegación principal">
+        <a class="logo" href="index.html" aria-label="L.U.Z., ir al inicio"><img class="logo-image" src="assets/logo-luz.png" alt=""><span class="logo-text">Luz</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
         <div class="nav-links" id="site-nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="cabina.html">La Cabina</a>
-            <a href="software.html">El Software</a>
-            <a href="investigacion.html" class="active">Investigación</a>
-            <a href="nuestra-historia.html">Nuestra Historia</a>
-            <a href="resenas.html">Opiniones</a>
+            <a href="index.html">Inicio</a><a href="cabina.html">La Cabina</a><a href="software.html">El Software</a><a href="investigacion.html" class="active" aria-current="page">Investigación</a><a href="nuestra-historia.html">Nuestra Historia</a><a href="resenas.html">Opiniones</a>
         </div>
-        <div class="nav-right">
-            <span class="nav-help">Línea 106 - Ayuda inmediata</span>
-        </div>
+        <div class="nav-right"><span class="nav-help">Línea 106 · Ayuda inmediata</span></div>
     </nav>
-
-    <main class="content-section">
-        <h2>Lo que hay detrás de Luz</h2>
-        <p style="margin-bottom: 3rem; color: var(--text-muted);">Todo el proyecto se apoya en datos públicos de Risaralda y en la revisión de asistentes conversacionales.</p>
-        
-        <div class="stats-grid">
-            <div class="stat-card" style="border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px;">
-                <h3>Contexto Regional</h3>
-                <p>Desarrollado específicamente como respuesta territorial para Pereira y los municipios cercanos, áreas que registran tasas de suicidio por encima del promedio nacional.</p>
-                <img
-                    class="regional-chart"
-                    src="assets/contexto-regional.png"
-                    alt="Infografía de la evolución de la salud mental y el análisis de intentos de suicidio en Risaralda entre 2009 y 2024, con tendencias temporales, disparidad de género y grupos de edad en riesgo."
-                >
+    <main>
+        <header class="research-hero">
+            <p class="subtitle">EVIDENCIA, CONTEXTO Y APRENDIZAJE</p>
+            <h1>Lo que hay detrás de la propuesta L.U.Z.</h1>
+            <p>Una respuesta pensada desde las necesidades de Risaralda y construida a partir de la revisión de datos públicos, antecedentes y alternativas de acompañamiento.</p>
+        </header>
+        <section class="content-section research-content" aria-labelledby="research-title">
+            <div class="research-section-heading">
+                <p class="subtitle">EL CONTEXTO Y LAS REFERENCIAS</p>
+                <h2 id="research-title">Investigar también es una forma de cuidar.</h2>
             </div>
-            <div class="stat-card" style="border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px;">
-                <h3>Estado del Arte</h3>
-                <p>Análisis comparativo e investigación global de iniciativas tecnológicas en salud mental, privacidad e IA conversacional para la contención en crisis.</p>
-                <iframe
-                    class="state-of-art-pdf"
-                    src="assets/estado-del-arte.pdf"
-                    title="Documento completo: Estado del Arte"
-                ></iframe>
-                <a class="pdf-download" href="assets/estado-del-arte.pdf" target="_blank" rel="noopener">
-                    Abrir o descargar el PDF
-                </a>
+            <div class="stats-grid">
+                <article class="stat-card research-card">
+                    <span class="research-card__index">01 · CONTEXTO LOCAL</span>
+                    <h3>Una mirada a Risaralda</h3>
+                    <p>El proyecto toma como punto de partida la información regional sobre salud mental y conducta suicida. Esta infografía presenta el análisis territorial recogido para orientar la propuesta; consulta sus fuentes y alcances antes de reutilizar los datos.</p>
+                    <img class="regional-chart" src="assets/contexto-regional.png" alt="Infografía del proyecto sobre la evolución de indicadores de salud mental e intentos de suicidio en Risaralda entre 2009 y 2024." loading="lazy">
+                </article>
+                <article class="stat-card research-card">
+                    <span class="research-card__index">02 · ANTECEDENTES</span>
+                    <h3>Estado del arte</h3>
+                    <p>Una revisión comparativa de iniciativas vinculadas con tecnología conversacional, privacidad y apoyo emocional, que ayuda a situar las decisiones de diseño de L.U.Z.</p>
+                    <iframe class="state-of-art-pdf" src="assets/estado-del-arte.pdf" title="Documento de investigación: Estado del Arte" loading="lazy"></iframe>
+                    <a class="pdf-download" href="assets/estado-del-arte.pdf" target="_blank" rel="noopener">Abrir o descargar el PDF <span aria-hidden="true">↗</span></a>
+                </article>
             </div>
-        </div>
+        </section>
+        <section class="content-section technical-section bg-light" aria-labelledby="technical-title">
+            <div class="technical-section__heading">
+                <p class="subtitle">DOCUMENTACIÓN DEL PROYECTO</p>
+                <h2 id="technical-title">Ficha técnica</h2>
+                <p>Consulta la ficha técnica estandarizada de L.U.Z.</p>
+            </div>
+            <div class="technical-sheet-container">
+                <iframe class="state-of-art-pdf" src="assets/ficha-tecnica.pdf" title="Ficha técnica estandarizada del proyecto L.U.Z." loading="lazy"></iframe>
+                <a class="pdf-download" href="assets/ficha-tecnica.pdf" target="_blank" rel="noopener">Abrir o descargar la ficha técnica <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
     </main>
-
-    <section class="content-section bg-light">
-        <h2>Ficha Técnica</h2>
-        <div class="technical-sheet-container">
-            <iframe
-                class="state-of-art-pdf"
-                src="assets/ficha-tecnica.pdf"
-                title="Ficha Técnica estandarizada del proyecto L.U.Z."
-            ></iframe>
-            <a class="pdf-download" href="assets/ficha-tecnica.pdf" target="_blank" rel="noopener">
-                Abrir o descargar la Ficha Técnica
-            </a>
-        </div>
-    </section>
-
+    <footer class="site-footer">
+        <a class="site-footer__brand" href="index.html">L.U.Z.</a>
+        <p>Escuchar, orientar y acercar a la ayuda adecuada.</p>
+        <p class="site-footer__help">Si estás en peligro inmediato, llama al 123. En Colombia puedes comunicarte con la Línea 106 donde esté disponible.</p>
+        <small>Un primer apoyo no sustituye la atención de profesionales de salud mental.</small>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>

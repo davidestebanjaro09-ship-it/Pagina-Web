@@ -3,70 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Software - Proyecto L.U.Z.</title>
+    <meta name="description" content="Conoce cómo L.U.Z. busca ofrecer escucha empática, respuestas fluidas y orientación responsable en momentos difíciles.">
+    <title>El Software | Proyecto L.U.Z.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="redesign.css">
+    <link rel="stylesheet" href="software.css">
 </head>
-<body>
-
-    <nav class="navbar">
-        <div class="logo">
-            <img class="logo-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.">
-            <span class="logo-text">Luz</span>
-        </div>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+<body class="software-page">
+    <nav class="navbar" aria-label="Navegación principal">
+        <a class="logo" href="index.html" aria-label="L.U.Z., ir al inicio"><img class="logo-image" src="assets/logo-luz.png" alt=""><span class="logo-text">Luz</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
         <div class="nav-links" id="site-nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="cabina.html">La Cabina</a>
-            <a href="software.html" class="active">El Software</a>
-            <a href="investigacion.html">Investigación</a>
-            <a href="nuestra-historia.html">Nuestra Historia</a>
-            <a href="resenas.html">Opiniones</a>
+            <a href="index.html">Inicio</a><a href="cabina.html">La Cabina</a><a href="software.html" class="active" aria-current="page">El Software</a><a href="investigacion.html">Investigación</a><a href="nuestra-historia.html">Nuestra Historia</a><a href="resenas.html">Opiniones</a>
         </div>
-        <div class="nav-right">
-            <span class="nav-help">Línea 106 - Ayuda inmediata</span>
-        </div>
+        <div class="nav-right"><span class="nav-help">Línea 106 · Ayuda inmediata</span></div>
     </nav>
-
-    <main class="content-section bg-light">
-        <h2>Un asistente entrenado para escuchar</h2>
-        <p style="margin-bottom: 3rem; color: var(--text-muted);">El software de Luz no reemplaza a un profesional. Está diseñado para contener el primer momento, orientar y derivar con seguridad.</p>
-        
-        <div class="features-section">
-            <div class="feature-card">
-                <h3>Modelo</h3>
-                <p>GPT-4.1-nano.</p>
+    <main>
+        <header class="software-hero">
+            <div class="software-hero__content">
+                <p class="software-eyebrow"><span aria-hidden="true"></span>Una presencia para el primer momento</p>
+                <h1>Un asistente entrenado para <em>escuchar.</em></h1>
+                <p class="software-hero__description">L.U.Z. ofrece un espacio para poner en palabras lo que pasa, con calma y sin juicios. Su propósito es acompañar ese primer momento y ayudar a encontrar el siguiente paso.</p>
+                <a class="software-text-link" href="#como-se-siente">Así se siente conversar <span aria-hidden="true">→</span></a>
+                <p class="software-hero__note"><span aria-hidden="true">✦</span> L.U.Z. no reemplaza a un profesional. Está diseñado para contener el primer momento y derivar con seguridad.</p>
             </div>
-            <div class="feature-card">
-                <h3>Utilidad y eficiencia</h3>
-                <p>Se seleccionó este modelo por su equilibrio entre capacidad analítica y alta velocidad de procesamiento. Esto minimiza el tiempo de latencia en las respuestas, permitiendo interacciones fluidas y naturales sin sacrificar la coherencia. Además, su costo por millón de tokens es altamente accesible ($0,10 USD de entrada y $0,40 USD de salida), lo cual resulta ideal para ejecutar pruebas iniciales escalables optimizando el presupuesto del proyecto.</p>
+            <div class="software-hero__art" aria-hidden="true">
+                <span class="software-orbit software-orbit--outer"></span><span class="software-orbit software-orbit--inner"></span>
+                <div class="software-sun"><span class="software-sun__ray software-sun__ray--one"></span><span class="software-sun__ray software-sun__ray--two"></span><span class="software-sun__ray software-sun__ray--three"></span><span class="software-sun__ray software-sun__ray--four"></span><span class="software-sun__core">L</span></div>
+                <span class="software-art-caption">Escucha · Orientación · Cuidado</span>
             </div>
-            <div class="feature-card">
-                <h3>Seguridad y ética</h3>
-                <p>Se han implementado estrictos parámetros de operación. La configuración del modelo está respaldada por el asesoramiento de profesionales en psicología para garantizar el uso de un lenguaje adecuado y evitar orientaciones erróneas. Asimismo, el sistema cuenta con restricciones absolutas, como la prohibición de emitir diagnósticos, mitigando así cualquier riesgo o consecuencia adversa para el usuario</p>
+        </header>
+        <section class="software-benefits" aria-labelledby="benefits-title">
+            <div class="software-section-heading">
+                <p class="software-eyebrow">TRES PILARES DE ACOMPAÑAMIENTO</p>
+                <h2 id="benefits-title">Tecnología al servicio de una conversación más humana.</h2>
+                <p>La propuesta reúne comprensión del lenguaje, una experiencia fluida y límites claros para priorizar el bienestar de cada persona.</p>
             </div>
-        </div>
+            <div class="software-benefit-grid">
+                <article class="software-benefit-card">
+                    <span class="software-benefit-card__icon software-benefit-card__icon--blue" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 5 28.5 18 42 22.5 28.5 27 24 40.5 19.5 27 6 22.5 19.5 18 24 5Z"/><path d="m38 5 1.8 5.2L45 12l-5.2 1.8L38 19l-1.8-5.2L31 12l5.2-1.8L38 5Z"/></svg></span>
+                    <p class="software-benefit-card__label">Comprensión empática</p>
+                    <h3>Escucha lo que quieres expresar</h3>
+                    <p>Comprende el lenguaje cotidiano y el contexto de la conversación para responder de forma clara, respetuosa y atenta a lo que estás viviendo.</p>
+                </article>
+                <article class="software-benefit-card">
+                    <span class="software-benefit-card__icon software-benefit-card__icon--amber" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M27 4 10 26h12l-1 18 17-24H26l1-16Z"/></svg></span>
+                    <p class="software-benefit-card__label">Conversación fluida</p>
+                    <h3>Una charla que sigue tu ritmo</h3>
+                    <p>Respuestas ágiles ayudan a mantener el hilo de la conversación, para que puedas seguir expresándote sin pausas incómodas.</p>
+                </article>
+                <article class="software-benefit-card">
+                    <span class="software-benefit-card__icon software-benefit-card__icon--green" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 5 40 12v11c0 10-7 17-16 21C15 40 8 33 8 23V12l16-7Z"/><path d="m17 24 5 5 10-11"/></svg></span>
+                    <p class="software-benefit-card__label">Seguridad y ética</p>
+                    <h3>Acompaña con límites claros</h3>
+                    <p>No diagnostica ni sustituye la atención profesional. Ante una situación que requiere más apoyo, su propósito es orientar hacia recursos y ayuda humana.</p>
+                </article>
+            </div>
+        </section>
+        <section class="software-conversation" id="como-se-siente" aria-labelledby="conversation-title">
+            <div class="software-conversation__copy">
+                <p class="software-eyebrow">SIN PRESIÓN. SIN JUICIOS. A TU RITMO.</p>
+                <h2 id="conversation-title">A veces, empezar por decirlo ya es mucho.</h2>
+                <p>No tienes que encontrar las palabras perfectas ni resolverlo todo de una vez. L.U.Z. busca ofrecer un primer espacio para hablar, ordenar lo que sientes y reconocer opciones de apoyo.</p>
+                <p class="software-conversation__aside"><span aria-hidden="true">✦</span> Un primer paso acompañado, no un reemplazo de la ayuda profesional.</p>
+            </div>
+            <figure class="software-illustration">
+                <img id="software-carousel-image" src="assets/luz-acompanamiento-comunidad.jpg" alt="Ilustración de una persona dentro de una cabina íntima, escuchando ondas de voz que evocan acompañamiento." width="736" height="1424" fetchpriority="high">
+                <figcaption id="software-carousel-caption" aria-live="polite">Un espacio de escucha y conexión, sin presión y a tu ritmo.</figcaption>
+            </figure>
+        </section>
+        <aside class="software-privacy" aria-labelledby="privacy-title">
+            <span class="software-privacy__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 5 40 12v11c0 10-7 17-16 21C15 40 8 33 8 23V12l16-7Z"/><path d="M18 24v-5a6 6 0 0 1 12 0v5M16 24h16v12H16z"/></svg></span>
+            <div>
+                <p class="software-eyebrow">PRIVACIDAD Y CUIDADO</p>
+                <h2 id="privacy-title">Tu confianza también importa.</h2>
+                <p>La propuesta prioriza un entorno reservado y un uso responsable de la tecnología. Antes de compartir información personal, revisa siempre cómo se protege y utiliza dentro del servicio.</p>
+            </div>
+            <a class="software-privacy__link" href="investigacion.html">Conoce el proyecto <span aria-hidden="true">→</span></a>
+        </aside>
+        <section class="software-cta" aria-labelledby="research-cta-title">
+            <p class="software-eyebrow">CONOCE EL RESPALDO DEL PROYECTO</p>
+            <h2 id="research-cta-title">Una idea que se construye con evidencia.</h2>
+            <p>Explora el contexto regional, las fuentes y el proceso detrás de L.U.Z.</p>
+            <a class="software-cta__button" href="investigacion.html">Leer la Investigación <span aria-hidden="true">→</span></a>
+        </section>
     </main>
-
-    <section class="meetings-section content-section">
-        <h2>Reuniones</h2>
-        <p>El equipo de L.U.Z. ha realizado una serie de reuniones para revisar los avances del software.</p>
-        <div class="meetings-carousel hero-carousel" role="region" aria-label="Fotos de las reuniones del equipo">
-            <img
-                class="hero-carousel-image"
-                id="meetings-carousel-image"
-                src="assets/reuniones/01-reunion-virtual.jpg"
-                alt="El equipo de L.U.Z. reunido virtualmente para revisar el proyecto."
-            >
-        </div>
-    </section>
-
+    <footer class="site-footer">
+        <a class="site-footer__brand" href="index.html">L.U.Z.</a>
+        <p>Escuchar, orientar y acercar a la ayuda adecuada.</p>
+        <p class="site-footer__help">Si estás en peligro inmediato, llama al 123. En Colombia puedes comunicarte con la Línea 106 donde esté disponible.</p>
+        <small>Un primer apoyo no sustituye la atención de profesionales de salud mental.</small>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>

@@ -1,40 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('.navbar');
-    const menuToggle = navbar?.querySelector('.menu-toggle');
-    const mobileMenu = window.matchMedia('(max-width: 1000px)');
-
-    if (navbar && menuToggle) {
-        const closeMenu = () => {
-            navbar.classList.remove('menu-open');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.setAttribute('aria-label', 'Abrir menú');
-        };
-
-        menuToggle.addEventListener('click', () => {
-            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-            navbar.classList.toggle('menu-open', !isOpen);
-            menuToggle.setAttribute('aria-expanded', String(!isOpen));
-            menuToggle.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
-        });
-
-        navbar.querySelectorAll('.nav-links a').forEach((link) => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        navbar.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && navbar.classList.contains('menu-open')) {
-                closeMenu();
-                menuToggle.focus();
-            }
-        });
-
-        mobileMenu.addEventListener('change', closeMenu);
-    }
-
-    const startCarousel = (imageId, slides) => {
+    const startCarousel = (imageId, slides, interval = 3000, captionId = null) => {
         const image = document.getElementById(imageId);
+        const caption = captionId ? document.getElementById(captionId) : null;
 
-        if (!image) {
+        if (!(image instanceof HTMLImageElement)) {
             return;
         }
 
@@ -44,31 +13,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         let currentSlide = 0;
-
-        window.setInterval(() => {
-            image.classList.add('is-changing');
-
+        const fadeDuration = 250;
+        const cycle = () => {
             window.setTimeout(() => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                image.src = slides[currentSlide].src;
-                image.alt = slides[currentSlide].alt;
-                image.classList.remove('is-changing');
-            }, 250);
-        }, 3000);
+                image.classList.add('is-changing');
+                window.setTimeout(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    image.src = slides[currentSlide].src;
+                    image.alt = slides[currentSlide].alt;
+                    if (caption && slides[currentSlide].caption) {
+                        caption.textContent = slides[currentSlide].caption;
+                    }
+                    image.classList.remove('is-changing');
+                    cycle();
+                }, fadeDuration);
+            }, Math.max(interval - fadeDuration, 0));
+        };
+        cycle();
     };
 
     startCarousel('hero-carousel-image', [
         {
             src: 'assets/inicio/01-construccion-cabina.jpeg',
-            alt: 'Equipo construyendo la cabina del proyecto Luz.'
+            alt: 'Equipo construyendo la cabina del proyecto L.U.Z.'
         },
         {
             src: 'assets/inicio/02-trabajo-en-equipo.jpeg',
-            alt: 'Integrantes del equipo trabajando juntos en el proyecto.'
+            alt: 'Integrantes del equipo trabajando juntos en el proyecto L.U.Z.'
         },
         {
             src: 'assets/inicio/03-cabina-acustica.jpg',
-            alt: 'Cabina del proyecto Luz revestida con material para aislamiento acústico.'
+            alt: 'Cabina del proyecto L.U.Z. revestida con material para aislamiento acústico.'
         },
         {
             src: 'assets/inicio/04-pintando-la-cabina.jpg',
@@ -92,81 +67,142 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ]);
 
-    startCarousel('meetings-carousel-image', [
+    startCarousel('software-carousel-image', [
         {
-            src: 'assets/reuniones/01-reunion-virtual.jpg',
-            alt: 'El equipo de L.U.Z. reunido virtualmente para revisar el proyecto.'
+            src: 'assets/luz-acompanamiento-comunidad.jpg',
+            alt: 'Una persona encuentra un espacio de calma y acompañamiento dentro de la cabina L.U.Z.',
+            caption: 'Un espacio de escucha y conexión, sin presión y a tu ritmo.'
         },
         {
-            src: 'assets/reuniones/02-reunion-presencial.jpg',
-            alt: 'El equipo de L.U.Z. conversa durante una reunión presencial.'
-        },
-        {
-            src: 'assets/reuniones/03-encuentro-equipo.jpg',
-            alt: 'Integrantes del equipo de L.U.Z. reunidos.'
-        },
-        {
-            src: 'assets/reuniones/04-revision-software-equipo.jpeg',
-            alt: 'El equipo revisa los avances del software en una reunión.'
-        },
-        {
-            src: 'assets/reuniones/05-revision-software.jpeg',
-            alt: 'Una integrante del equipo revisa el software en un computador.'
+            src: 'assets/luz-acompanamiento-orientacion.jpg',
+            alt: 'Ilustración de una persona recibiendo orientación y una conversación cálida en la cabina L.U.Z.',
+            caption: 'Una conversación cálida que ayuda a encontrar el siguiente paso.'
         }
-    ]);
+    ], 4000, 'software-carousel-caption');
+
+    const navbar = document.querySelector('.navbar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (navbar && menuToggle) {
+        const closeMenu = () => {
+            navbar.classList.remove('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Abrir menú');
+        };
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            navbar.classList.toggle('menu-open', !isOpen);
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
+        });
+
+        navbar.querySelectorAll('.nav-links a').forEach((link) => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+    }
+
+    const dashboard = document.querySelector('.kpi-dashboard');
+    if (dashboard) {
+        const cards = Array.from(dashboard.querySelectorAll('.kpi-card'));
+        const setExpandedCard = (card) => {
+            cards.forEach((item) => {
+                const button = item.querySelector('.kpi-card__expand');
+                const expanded = item === card;
+                item.classList.toggle('is-expanded', expanded);
+                if (button) {
+                    button.setAttribute('aria-expanded', String(expanded));
+                }
+            });
+            dashboard.classList.toggle('is-card-expanded', Boolean(card));
+        };
+
+        cards.forEach((card) => {
+            let isHoveredByMouse = false;
+            card.addEventListener('pointerenter', (event) => {
+                if (event.pointerType === 'mouse') {
+                    isHoveredByMouse = true;
+                    setExpandedCard(card);
+                }
+            });
+            card.addEventListener('pointerleave', (event) => {
+                if (event.pointerType === 'mouse') {
+                    isHoveredByMouse = false;
+                }
+                if (event.pointerType === 'mouse' && card.classList.contains('is-expanded')) {
+                    setExpandedCard(null);
+                }
+            });
+            const button = card.querySelector('.kpi-card__expand');
+            if (button) {
+                button.addEventListener('click', () => {
+                    if (card.classList.contains('is-expanded') && !isHoveredByMouse) {
+                        setExpandedCard(null);
+                    } else {
+                        setExpandedCard(card);
+                    }
+                });
+            }
+        });
+
+        document.addEventListener('pointerdown', (event) => {
+            if (dashboard.classList.contains('is-card-expanded') && !dashboard.contains(event.target)) {
+                setExpandedCard(null);
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && dashboard.classList.contains('is-card-expanded')) {
+                setExpandedCard(null);
+            }
+        });
+    }
 
     const reviewForm = document.getElementById('review-form');
     const reviewsList = document.getElementById('reviews-list');
 
-    if (reviewForm) {
-        reviewForm.addEventListener('submit', function(evento) {
-            // Prevenimos que la página se recargue al enviar el formulario
-            evento.preventDefault();
-            
-            // 1. Capturar los datos
-            let name = document.getElementById('reviewer-name').value.trim();
-            const text = document.getElementById('review-text').value.trim();
+    if (reviewForm instanceof HTMLFormElement && reviewsList) {
+        reviewForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const nameField = document.getElementById('reviewer-name');
+            const textField = document.getElementById('review-text');
             const ratingElement = document.querySelector('input[name="rating"]:checked');
-            
-            // Validar si el usuario dejó el nombre en blanco
-            if (name === '') {
-                name = 'Anónimo';
+            if (!(nameField instanceof HTMLInputElement) || !(textField instanceof HTMLTextAreaElement) || !(ratingElement instanceof HTMLInputElement)) {
+                return;
             }
 
-            const rating = ratingElement ? ratingElement.value : 5;
-
-            // 2. Crear las estrellas doradas para mostrar
-            let starsHtml = '';
-            for(let i = 0; i < 5; i++) {
-                if(i < rating) {
-                    starsHtml += '★';
-                } else {
-                    starsHtml += '☆';
-                }
-            }
-
-            // 3. Crear la tarjeta HTML de la nueva reseña
-            const reviewCard = document.createElement('div');
+            const name = nameField.value.trim() || 'Anónimo';
+            const text = textField.value.trim();
+            const rating = Number(ratingElement.value);
+            const reviewCard = document.createElement('article');
             reviewCard.classList.add('review-card');
-            reviewCard.innerHTML = `
-                <div class="review-card-header">
-                    <span>${name}</span>
-                    <span class="stars-display">${starsHtml}</span>
-                </div>
-                <p>${text}</p>
-            `;
 
-            // 4. Quitar el mensaje de "Aún no hay opiniones" si existe
-            const noReviewsMsg = document.querySelector('.no-reviews-msg');
-            if (noReviewsMsg) {
-                noReviewsMsg.remove();
+            const header = document.createElement('div');
+            header.classList.add('review-card-header');
+            const reviewer = document.createElement('span');
+            reviewer.textContent = name;
+            const stars = document.createElement('span');
+            stars.classList.add('stars-display');
+            stars.setAttribute('aria-label', `${rating} de 5 estrellas`);
+            stars.textContent = `${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}`;
+            header.append(reviewer, stars);
+
+            const reviewText = document.createElement('p');
+            reviewText.textContent = text;
+            reviewCard.append(header, reviewText);
+
+            const noReviewsMessage = reviewsList.querySelector('.no-reviews-msg');
+            if (noReviewsMessage) {
+                noReviewsMessage.remove();
             }
-
-            // 5. Agregar la reseña al principio de la lista
             reviewsList.prepend(reviewCard);
-
-            // 6. Limpiar el formulario para la siguiente persona
             reviewForm.reset();
         });
     }
-})
+});

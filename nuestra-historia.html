@@ -8,29 +8,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="redesign.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <img class="logo-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.">
+    <nav class="navbar" aria-label="Navegación principal">
+        <a class="logo" href="index.html" aria-label="L.U.Z., ir al inicio">
+            <img class="logo-image" src="assets/logo-luz.png" alt="">
             <span class="logo-text">Luz</span>
-        </div>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
         <div class="nav-links" id="site-nav-links">
             <a href="index.html">Inicio</a>
             <a href="cabina.html">La Cabina</a>
             <a href="software.html">El Software</a>
             <a href="investigacion.html">Investigación</a>
-            <a href="nuestra-historia.html" class="active">Nuestra Historia</a>
+            <a href="nuestra-historia.html" class="active" aria-current="page">Nuestra Historia</a>
             <a href="resenas.html">Opiniones</a>
         </div>
         <div class="nav-right">
-            <span class="nav-help">Línea 106 - Ayuda inmediata</span>
+            <span class="nav-help">Línea 106 · Ayuda inmediata</span>
         </div>
     </nav>
 
@@ -72,8 +69,8 @@
                     <h3>Cabinas seguras, privadas y sostenibles</h3>
                     <p>Decidimos transformar el espacio público creando cabinas inteligentes de escucha activa, construidas con materiales reciclados. Así, damos una segunda vida a las cosas y a las personas.</p>
                     <div class="story-support">
-                        <h3>Acompañamiento 24/7</h3>
-                        <p>La IA está entrenada en protocolos clínicos de contención emocional para evaluar el nivel de riesgo y redirigir de forma inmediata a líneas humanas de emergencia cuando se detecta una crisis grave.</p>
+                        <h3>Una propuesta de acompañamiento accesible</h3>
+                        <p>El diseño busca ofrecer un primer momento de escucha y orientar hacia apoyo humano cuando sea necesario. La disponibilidad permanente es una meta del proyecto, no una garantía de servicio actual; L.U.Z. no diagnostica ni sustituye atención profesional.</p>
                     </div>
                 </div>
             </section>
@@ -84,6 +81,12 @@
         </blockquote>
     </main>
 
+    <footer class="site-footer">
+        <a class="site-footer__brand" href="index.html">L.U.Z.</a>
+        <p>Escuchar, orientar y acercar a la ayuda adecuada.</p>
+        <p class="site-footer__help">Si estás en peligro inmediato, llama al 123. En Colombia puedes comunicarte con la Línea 106 donde esté disponible.</p>
+        <small>Un primer apoyo no sustituye la atención de profesionales de salud mental.</small>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>

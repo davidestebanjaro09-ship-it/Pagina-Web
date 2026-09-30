@@ -3,80 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opiniones - Proyecto L.U.Z.</title>
+    <meta name="description" content="Comparte tu opinión o sugerencia sobre el proyecto L.U.Z.">
+    <title>Opiniones | Proyecto L.U.Z.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="redesign.css">
 </head>
 <body>
-
-    <!-- El menú de navegación -->
-    <nav class="navbar">
-        <div class="logo">
-            <img class="logo-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.">
-            <span class="logo-text">Luz</span>
-        </div>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <nav class="navbar" aria-label="Navegación principal">
+        <a class="logo" href="index.html" aria-label="L.U.Z., ir al inicio"><img class="logo-image" src="assets/logo-luz.png" alt=""><span class="logo-text">Luz</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
         <div class="nav-links" id="site-nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="cabina.html">La Cabina</a>
-            <a href="software.html">El Software</a>
-            <a href="investigacion.html">Investigación</a>
-            <a href="nuestra-historia.html">Nuestra Historia</a>
-            <a href="resenas.html" class="active">Opiniones</a> <!-- Nota la clase 'active' -->
+            <a href="index.html">Inicio</a><a href="cabina.html">La Cabina</a><a href="software.html">El Software</a><a href="investigacion.html">Investigación</a><a href="nuestra-historia.html">Nuestra Historia</a><a href="resenas.html" class="active" aria-current="page">Opiniones</a>
         </div>
-        <div class="nav-right">
-            <span class="nav-help">Línea 106 - Ayuda inmediata</span>
-        </div>
+        <div class="nav-right"><span class="nav-help">Línea 106 · Ayuda inmediata</span></div>
     </nav>
-
-    <!-- Contenido exclusivo de esta pestaña -->
-    <main class="reviews-section bg-light">
+    <main class="reviews-section">
         <div class="reviews-container">
-            <div class="reviews-header">
-                <h2>Tu opinión cuenta</h2>
-                <p>¿Qué piensas del proyecto Luz? Comparte tu reseña o sugerencia. Puedes dejar tu nombre o ser anónimo.</p>
-            </div>
-
+            <header class="reviews-header">
+                <span class="subtitle">UNA IDEA QUE CRECE EN COMUNIDAD</span>
+                <h2>Tu opinión también nos orienta.</h2>
+                <p>Cuéntanos qué piensas de L.U.Z. o comparte una sugerencia. Puedes dejar tu nombre o escribir de forma anónima.</p>
+            </header>
             <form id="review-form" class="review-form">
                 <div class="form-group">
-                    <label for="reviewer-name">Nombre (opcional)</label>
-                    <input type="text" id="reviewer-name" placeholder="Puedes dejarlo en blanco">
+                    <label for="reviewer-name">Nombre <span>(opcional)</span></label>
+                    <input type="text" id="reviewer-name" name="name" autocomplete="name" maxlength="80" placeholder="Puedes dejarlo en blanco">
                 </div>
-                
                 <div class="form-group">
                     <label for="review-text">Tu opinión</label>
-                    <textarea id="review-text" required placeholder="Cuéntanos qué te parece el proyecto..." rows="4"></textarea>
+                    <textarea id="review-text" name="review" required maxlength="1500" placeholder="Cuéntanos qué te parece el proyecto..." rows="5"></textarea>
                 </div>
-                
-                <div class="form-group">
-                    <label>Calificación</label>
-                    <div class="star-rating">
-                        <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
-                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-                        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
-                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                <fieldset class="form-group rating-field">
+                    <legend>Calificación</legend>
+                    <div class="star-rating" role="radiogroup" aria-label="Calificación de una a cinco estrellas">
+                        <input type="radio" id="star5" name="rating" value="5" required><label for="star5" aria-label="5 estrellas">★</label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4" aria-label="4 estrellas">★</label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3" aria-label="3 estrellas">★</label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2" aria-label="2 estrellas">★</label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1" aria-label="1 estrella">★</label>
                     </div>
-                </div>
-                
-                <button type="submit" class="btn-primary">Publicar opinión</button>
+                </fieldset>
+                <button type="submit" class="btn-primary">Publicar opinión <span aria-hidden="true">→</span></button>
             </form>
-
-            <div class="recent-reviews">
-                <h3>Opiniones recientes</h3>
-                <div id="reviews-list">
-                    <p class="no-reviews-msg">Aún no hay opiniones. Sé el primero en compartir la tuya.</p>
+            <section class="recent-reviews" aria-labelledby="recent-reviews-title">
+                <h3 id="recent-reviews-title">Opiniones recientes</h3>
+                <div id="reviews-list" aria-live="polite">
+                    <p class="no-reviews-msg">Aún no hay opiniones. Sé la primera persona en compartir la tuya.</p>
                 </div>
-            </div>
+            </section>
         </div>
     </main>
-
+    <footer class="site-footer">
+        <a class="site-footer__brand" href="index.html">L.U.Z.</a>
+        <p>Escuchar, orientar y acercar a la ayuda adecuada.</p>
+        <p class="site-footer__help">Si estás en peligro inmediato, llama al 123. En Colombia puedes comunicarte con la Línea 106 donde esté disponible.</p>
+        <small>Un primer apoyo no sustituye la atención de profesionales de salud mental.</small>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>

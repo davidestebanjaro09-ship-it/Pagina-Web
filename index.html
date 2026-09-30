@@ -3,96 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L.U.Z. ofrece un espacio para escuchar, orientar y acompañar en momentos difíciles.">
     <title>Proyecto L.U.Z. - Inicio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="redesign.css">
 </head>
-<body>
-
-    <nav class="navbar">
-        <div class="logo">
-            <img class="logo-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.">
+<body class="home-page">
+    <nav class="navbar" aria-label="Navegación principal">
+        <a class="logo" href="index.html" aria-label="L.U.Z., ir al inicio">
+            <img class="logo-image" src="assets/logo-luz.png" alt="">
             <span class="logo-text">Luz</span>
-        </div>
+        </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
         <div class="nav-links" id="site-nav-links">
-            <a href="index.html" class="active">Inicio</a> <a href="cabina.html">La Cabina</a>
+            <a href="index.html" class="active" aria-current="page">Inicio</a>
+            <a href="cabina.html">La Cabina</a>
             <a href="software.html">El Software</a>
             <a href="investigacion.html">Investigación</a>
             <a href="nuestra-historia.html">Nuestra Historia</a>
             <a href="resenas.html">Opiniones</a>
         </div>
-        <div class="nav-right">
-            <span class="nav-help">Línea 106 - Ayuda inmediata</span>
-        </div>
+        <div class="nav-right"><span class="nav-help">Línea 106 · Ayuda inmediata</span></div>
     </nav>
 
-    <header class="hero-section">
-        <div class="hero-content">
-            <span class="subtitle">SENA - RISARALDA</span>
-            <h1>Una luz cuando todo<br>parece oscuro.</h1>
-            <p>Luz es una cabina física con un asistente psicológico basado en IA, pensada para escuchar, orientar y acompañar a quien atraviesa una crisis emocional — y prevenir un posible caso de suicidio.</p>
-            <div class="hero-buttons">
-                <a class="btn-primary" href="cabina.html">Conoce la cabina</a>
-                <a class="btn-secondary" href="investigacion.html">Ver investigación</a>
+    <main>
+        <header class="hero-section">
+            <div class="hero-content">
+                <span class="subtitle">LÍNEAS DE URGENCIAS Y ZONAS SEGURAS · SENA RISARALDA</span>
+                <h1>Una luz cuando todo<br>parece oscuro.</h1>
+                <p>Un espacio seguro para hacer una pausa, ser escuchado y encontrar orientación cuando atravesar un momento difícil se siente demasiado pesado.</p>
+                <div class="hero-buttons">
+                    <a class="btn-primary" href="cabina.html">Descubre L.U.Z. <span aria-hidden="true">→</span></a>
+                    <a class="btn-secondary" href="investigacion.html">Conoce la investigación</a>
+                </div>
+                <p class="hero-reassurance"><span aria-hidden="true">✳</span> Un primer apoyo para acercarte a ayuda profesional.</p>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="hero-carousel" role="region" aria-label="Fotos del proyecto Luz">
-                <img
-                    class="hero-carousel-image"
-                    id="hero-carousel-image"
-                    src="assets/inicio/01-construccion-cabina.jpeg"
-                    alt="Equipo construyendo la cabina del proyecto Luz."
-                >
-                <div class="stats-overlay">
-                    <strong>106</strong>
-                    <span>Línea nacional de salud mental</span>
+            <div class="hero-image">
+                <div class="hero-carousel" role="region" aria-label="Fotos del proyecto L.U.Z.">
+                    <img class="hero-carousel-image" id="hero-carousel-image" src="assets/inicio/01-construccion-cabina.jpeg" alt="Equipo construyendo la cabina del proyecto L.U.Z.">
+                    <div class="stats-overlay"><strong>106</strong><span>Línea nacional de salud mental</span></div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="problem-section">
-        <div class="problem-text">
-            <span class="subtitle">LA PROBLEMÁTICA</span>
-            <h2>En Risaralda, el suicidio es una urgencia silenciosa.</h2>
-            <p>Pereira y los municipios cercanos registran tasas de suicidio por encima del promedio nacional. La salud mental no siempre llega a tiempo, y muchas personas no saben dónde pedir ayuda en el momento crítico.</p>
-        </div>
-        
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>↑</h3>
-                <p>Risaralda: tasa de suicidio sobre el promedio nacional</p>
+        <section class="problem-section" aria-labelledby="why-luz">
+            <div class="problem-text">
+                <span class="subtitle">POR QUÉ EXISTE L.U.Z.</span>
+                <h2 id="why-luz">La salud emocional merece un espacio para ser escuchada.</h2>
+                <p>En Risaralda, muchas personas enfrentan barreras para pedir ayuda justo cuando más la necesitan. L.U.Z. nace para ofrecer un primer espacio de escucha y orientación, y ayudar a acercar cada situación al apoyo adecuado.</p>
             </div>
-            <div class="stat-card">
-                <h3>15 - 29</h3>
-                <p>Rango de edad más afectado</p>
-            </div>
-            <div class="stat-card">
-                <h3>24/7</h3>
-                <p>Disponibilidad pensada para la cabina Luz</p>
-            </div>
-            <div class="stat-card">
-                <h3>0$</h3>
-                <p>Costo para quien necesita hablar</p>
-            </div>
-        </div>
-    </section>
 
-    <section class="logo-concept-section content-section">
-        <h2>Logo</h2>
-        <img class="logo-concept-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.: una cabina azul con una puerta cálida sobre fondo oscuro.">
-        <h3>Concepto</h3>
-        <p>Representa físicamente la "Zona Segura". Se diseña como una cabina geométrica que a su vez parece un escudo protector. En el centro, una puerta cálida invita a entrar, simbolizando la privacidad y el anonimato del entorno.</p>
-    </section>
+            <section class="kpi-dashboard" aria-labelledby="kpi-title">
+                <header class="kpi-dashboard__heading">
+                    <div>
+                        <p>L.U.Z. Y SU CONTEXTO</p>
+                        <h3 id="kpi-title">Datos que explican por qué importa escuchar.</h3>
+                    </div>
+                    <span>4 claves</span>
+                </header>
+                <div class="stats-grid">
+                    <article class="stat-card kpi-card kpi-card--problem">
+                        <div class="kpi-card__top"><span class="kpi-card__category">Una realidad cercana</span><span class="kpi-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M7 38h34M10 32 20 23l8 5 12-15M31 13h9v9"/></svg></span></div>
+                        <span class="kpi-card__eyebrow">Risaralda</span>
+                        <h4 class="kpi-card__value kpi-card__value--statement">Sobre el promedio</h4>
+                        <p class="kpi-card__description">La tasa de suicidio supera el promedio nacional.</p>
+                        <p class="kpi-card__note" id="kpi-detail-problem">Un llamado a acercar espacios de escucha y apoyo.</p>
+                        <button class="kpi-card__expand" type="button" aria-label="Mostrar más información sobre la realidad regional" aria-expanded="false" aria-controls="kpi-detail-problem"></button>
+                    </article>
+                    <article class="stat-card kpi-card kpi-card--age">
+                        <div class="kpi-card__top"><span class="kpi-card__category">A quiénes queremos escuchar</span><span class="kpi-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="19" cy="16" r="7"/><path d="M6 39c0-7 5.8-12 13-12 4.2 0 7.8 1.8 10.1 4.8M32 13v14M25 20h14"/></svg></span></div>
+                        <h4 class="kpi-card__value">15–29</h4>
+                        <span class="kpi-card__eyebrow">Jóvenes</span>
+                        <p class="kpi-card__description">El rango de edad con mayor afectación reportada.</p>
+                        <p class="kpi-card__note" id="kpi-detail-age">Cada persona merece ser escuchada sin juicios.</p>
+                        <button class="kpi-card__expand" type="button" aria-label="Mostrar más información sobre el rango de edad" aria-expanded="false" aria-controls="kpi-detail-age"></button>
+                    </article>
+                    <article class="stat-card kpi-card kpi-card--availability">
+                        <div class="kpi-card__top"><span class="kpi-card__category">Acompañamiento proyectado</span><span class="kpi-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="17"/><path d="M24 14v11l7 4"/></svg></span></div>
+                        <h4 class="kpi-card__value">24/7</h4>
+                        <span class="kpi-card__eyebrow">Meta de disponibilidad</span>
+                        <p class="kpi-card__description">La propuesta busca estar disponible a cualquier hora.</p>
+                        <p class="kpi-card__note" id="kpi-detail-availability">Disponibilidad prevista en el diseño de la cabina.</p>
+                        <button class="kpi-card__expand" type="button" aria-label="Mostrar más información sobre la disponibilidad" aria-expanded="false" aria-controls="kpi-detail-availability"></button>
+                    </article>
+                    <article class="stat-card kpi-card kpi-card--access">
+                        <div class="kpi-card__top"><span class="kpi-card__category">Acceso sin costo</span><span class="kpi-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 5 39 11v11c0 10-6.5 17-15 21C15.5 39 9 32 9 22V11l15-6Z"/><path d="m17 24 5 5 10-11"/></svg></span></div>
+                        <h4 class="kpi-card__value">0$</h4>
+                        <span class="kpi-card__eyebrow">Sin costo</span>
+                        <p class="kpi-card__description">Un primer espacio para hablar y recibir orientación.</p>
+                        <p class="kpi-card__note" id="kpi-detail-access">La escucha no debería ser una barrera.</p>
+                        <button class="kpi-card__expand" type="button" aria-label="Mostrar más información sobre el acceso sin costo" aria-expanded="false" aria-controls="kpi-detail-access"></button>
+                    </article>
+                </div>
+                <footer class="kpi-dashboard__footer">
+                    <span><span class="kpi-dashboard__footer-dot" aria-hidden="true"></span> Indicadores de contexto y diseño del proyecto</span>
+                    <a href="investigacion.html">Conoce la investigación <span aria-hidden="true">→</span></a>
+                </footer>
+            </section>
+        </section>
 
+        <section class="logo-concept-section content-section">
+            <p class="subtitle">UN SÍMBOLO CON PROPÓSITO</p>
+            <h2>Un lugar seguro también puede ser una luz.</h2>
+            <div class="home-concept">
+                <img class="logo-concept-image" src="assets/logo-luz.png" alt="Logo de L.U.Z.: una cabina azul con una puerta cálida sobre fondo oscuro.">
+                <div class="home-concept__copy">
+                    <h3>Una invitación a entrar</h3>
+                    <p>La cabina evoca una zona segura: un espacio de privacidad y calma. Su puerta cálida invita a acercarse, hablar y dar un primer paso hacia el apoyo que cada persona merece.</p>
+                    <a href="nuestra-historia.html">Conoce nuestra historia <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="site-footer__brand" href="index.html">L.U.Z.</a>
+        <p>Un primer espacio para escuchar, orientar y acompañar.</p>
+        <p class="site-footer__help">Si estás en peligro inmediato, llama al 123. En Colombia puedes comunicarte con la Línea 106 donde esté disponible.</p>
+        <small>Proyecto L.U.Z. · SENA Risaralda · Un primer apoyo no sustituye la atención profesional.</small>
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>
